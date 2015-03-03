@@ -1,0 +1,8 @@
+ben_my_car_park:
+    resource: "@BenMyCarParkBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
