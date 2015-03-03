@@ -169,4 +169,14 @@ class RegisteredOwner
     {
         return $this->vehicles;
     }
+    
+    /**
+     * Renders a RegisteredOwner as a string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

@@ -242,4 +242,14 @@ class Vehicle
     {
         return $this->registeredOwner;
     }
+    
+    /**
+     * Renders a Vehicle as a string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getRegistrationNumber();
+    }
 }

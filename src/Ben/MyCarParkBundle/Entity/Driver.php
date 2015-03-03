@@ -139,4 +139,14 @@ class Driver
     {
         return $this->vehicles;
     }
+    
+    /**
+     * Renders a Driver as a string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

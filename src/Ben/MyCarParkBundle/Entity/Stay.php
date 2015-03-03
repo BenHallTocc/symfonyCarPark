@@ -152,4 +152,14 @@ class Stay
     {
         return $this->vehicle;
     }
+    
+    /**
+     * Renders a Stay as a string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->getId();
+    }
 }

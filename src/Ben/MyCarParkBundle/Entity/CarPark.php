@@ -259,4 +259,14 @@ class CarPark
     {
         return $this->stays;
     }
+    
+    /**
+     * Render a CarPark as a string
+     * 
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
