@@ -4,6 +4,7 @@ namespace Ben\MyCarParkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * RegisteredOwner
@@ -33,6 +34,8 @@ class RegisteredOwner
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -47,6 +50,11 @@ class RegisteredOwner
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * 
+     * @Assert\Email(
+     *      message = "The email '{{ value }}' is not a valid email.",
+     *      checkMX = true
+     * )
      */
     private $email;
 

@@ -4,6 +4,7 @@ namespace Ben\MyCarParkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * CarPark
@@ -33,6 +34,8 @@ class CarPark
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -40,6 +43,8 @@ class CarPark
      * @var integer
      *
      * @ORM\Column(name="maxHeight", type="integer")
+     * 
+     * @Assert\NotNull()
      */
     private $maxHeight;
 
@@ -47,6 +52,8 @@ class CarPark
      * @var integer
      *
      * @ORM\Column(name="numberOfCarSpaces", type="integer")
+     * 
+     * @Assert\NotNull()
      */
     private $numberOfCarSpaces;
 
@@ -54,6 +61,8 @@ class CarPark
      * @var integer
      *
      * @ORM\Column(name="numberOfLorrySpaces", type="integer")
+     * 
+     * @Assert\NotNull()
      */
     private $numberOfLorrySpaces;
 
@@ -61,6 +70,8 @@ class CarPark
      * @var integer
      *
      * @ORM\Column(name="numberOfMotorbikeSpaces", type="integer")
+     * 
+     * @Assert\NotNull()
      */
     private $numberOfMotorbikeSpaces;
 
@@ -68,6 +79,11 @@ class CarPark
      * @var integer
      *
      * @ORM\Column(name="maxStay", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = 1,
+     *      minMessage = "You will need to select 1 or greater."
+     * )
      */
     private $maxStay;
     

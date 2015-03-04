@@ -35,6 +35,7 @@ class StayController extends Controller
             'entities' => $entities,
         );
     }
+    
     /**
      * Creates a new Stay entity.
      *
@@ -169,6 +170,7 @@ class StayController extends Controller
 
         return $form;
     }
+    
     /**
      * Edits an existing Stay entity.
      *
@@ -202,6 +204,7 @@ class StayController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a Stay entity.
      *

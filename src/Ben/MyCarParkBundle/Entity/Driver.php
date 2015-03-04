@@ -4,6 +4,7 @@ namespace Ben\MyCarParkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Driver
@@ -33,6 +34,8 @@ class Driver
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -40,6 +43,8 @@ class Driver
      * @var string
      *
      * @ORM\Column(name="drivingLicenseNumber", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $drivingLicenseNumber;
     

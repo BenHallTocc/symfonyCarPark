@@ -3,6 +3,7 @@
 namespace Ben\MyCarParkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Stay
@@ -26,6 +27,8 @@ class Stay
      *
      * @ORM\ManyToOne(targetEntity="CarPark", inversedBy="stays")
      * @ORM\JoinColumn(name="carPark_id", referencedColumnName="id")
+     * 
+     * @Assert\NotNull()
      */
     private $carPark;
 
@@ -34,6 +37,8 @@ class Stay
      *
      * @ORM\OneToOne(targetEntity="Vehicle")
      * @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id")
+     * 
+     * @Assert\NotNull()
      */
     private $vehicle;
 
@@ -41,6 +46,8 @@ class Stay
      * @var \DateTime
      *
      * @ORM\Column(name="entryTime", type="datetime")
+     * 
+     * @Assert\DateTime()
      */
     private $entryTime;
 
@@ -48,6 +55,8 @@ class Stay
      * @var \DateTime
      *
      * @ORM\Column(name="exitByTime", type="datetime")
+     * 
+     * @Assert\DateTime()
      */
     private $exitByTime;
 

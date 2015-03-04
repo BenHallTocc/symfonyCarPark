@@ -17,8 +17,14 @@ class StayType extends AbstractType
         $builder
             ->add('entryTime')
             ->add('exitByTime')
-            ->add('carPark')
-            ->add('vehicle')
+            ->add('carPark', 'entity', array(
+                'required' => TRUE,
+                'class' => 'BenMyCarParkBundle:CarPark'
+            ))
+            ->add('vehicle', 'entity', array(
+                'required' => TRUE,
+                'class' => 'BenMyCarParkBundle:Vehicle'
+            ))
         ;
     }
     

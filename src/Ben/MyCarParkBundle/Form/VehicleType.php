@@ -20,8 +20,14 @@ class VehicleType extends AbstractType
             ->add('colour')
             ->add('numberOfWheels')
             ->add('height')
-            ->add('driver')
-            ->add('registeredOwner')
+            ->add('driver', 'entity', array(
+                'required' => TRUE,
+                'class' => 'BenMyCarParkBundle:Driver'
+            ))
+            ->add('registeredOwner', 'entity', array(
+                'required' => TRUE,
+                'class' => 'BenMyCarParkBundle:RegisteredOwner'
+            ))
         ;
     }
     

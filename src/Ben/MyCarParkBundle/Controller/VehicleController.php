@@ -35,6 +35,7 @@ class VehicleController extends Controller
             'entities' => $entities,
         );
     }
+    
     /**
      * Creates a new Vehicle entity.
      *
@@ -169,6 +170,7 @@ class VehicleController extends Controller
 
         return $form;
     }
+    
     /**
      * Edits an existing Vehicle entity.
      *
@@ -202,6 +204,7 @@ class VehicleController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a Vehicle entity.
      *

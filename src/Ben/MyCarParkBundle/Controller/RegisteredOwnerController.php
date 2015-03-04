@@ -35,6 +35,7 @@ class RegisteredOwnerController extends Controller
             'entities' => $entities,
         );
     }
+    
     /**
      * Creates a new RegisteredOwner entity.
      *
@@ -169,6 +170,7 @@ class RegisteredOwnerController extends Controller
 
         return $form;
     }
+    
     /**
      * Edits an existing RegisteredOwner entity.
      *
@@ -202,6 +204,7 @@ class RegisteredOwnerController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a RegisteredOwner entity.
      *

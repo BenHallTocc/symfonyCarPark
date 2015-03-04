@@ -35,6 +35,7 @@ class CarParkController extends Controller
             'entities' => $entities,
         );
     }
+    
     /**
      * Creates a new CarPark entity.
      *
@@ -71,11 +72,13 @@ class CarParkController extends Controller
      */
     private function createCreateForm(CarPark $entity)
     {
+        // Creates frm fields basd on the entity
         $form = $this->createForm(new CarParkType(), $entity, array(
             'action' => $this->generateUrl('carpark_create'),
             'method' => 'POST',
         ));
-
+        
+        // Adds a Submit button to the bottom of the form
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
@@ -169,6 +172,7 @@ class CarParkController extends Controller
 
         return $form;
     }
+    
     /**
      * Edits an existing CarPark entity.
      *
@@ -202,6 +206,7 @@ class CarParkController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a CarPark entity.
      *

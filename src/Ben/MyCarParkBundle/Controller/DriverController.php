@@ -35,6 +35,7 @@ class DriverController extends Controller
             'entities' => $entities,
         );
     }
+    
     /**
      * Creates a new Driver entity.
      *
@@ -169,6 +170,7 @@ class DriverController extends Controller
 
         return $form;
     }
+    
     /**
      * Edits an existing Driver entity.
      *
@@ -202,6 +204,7 @@ class DriverController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a Driver entity.
      *

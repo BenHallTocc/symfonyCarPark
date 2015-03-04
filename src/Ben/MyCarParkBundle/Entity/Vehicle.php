@@ -3,6 +3,7 @@
 namespace Ben\MyCarParkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Vehicle
@@ -26,6 +27,8 @@ class Vehicle
      *
      * @ORM\ManyToOne(targetEntity="Driver", inversedBy="vehicles")
      * @ORM\JoinColumn(name="driver_id", referencedColumnName="id")
+     * 
+     * @Assert\NotNull()
      */
     private $driver;
 
@@ -34,6 +37,8 @@ class Vehicle
      *
      * @ORM\ManyToOne(targetEntity="RegisteredOwner", inversedBy="vehicles")
      * @ORM\JoinColumn(name="registeredOwner_id", referencedColumnName="id")
+     * 
+     * @Assert\NotNull()
      */
     private $registeredOwner;
     
@@ -41,6 +46,8 @@ class Vehicle
      * @var string
      * 
      * @ORM\Column(name="vehicleType", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $vehicleType;
     
@@ -48,13 +55,15 @@ class Vehicle
      * @var string
      *
      * @ORM\Column(name="registrationNumber", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $registrationNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="colour", type="string", length=255)
+     * @ORM\Column(name="colour", type="string", length=255, nullable=true)
      */
     private $colour;
 
@@ -62,6 +71,11 @@ class Vehicle
      * @var integer
      *
      * @ORM\Column(name="numberOfWheels", type="integer")
+     * 
+     * @Assert\Range(
+     *  min = 2,
+     *  minMessage = "You need to select 2 or higher."
+     * )
      */
     private $numberOfWheels;
 
