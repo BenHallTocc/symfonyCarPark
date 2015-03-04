@@ -1,18 +1,19 @@
 {% extends '::base.html.twig' %}
+{% block title %}Car Park List{% endblock %}
 
 {% block body -%}
-    <h1>CarPark list</h1>
+    <h1>Car Park List</h1>
 
-    <table class="records_list">
+    <table class="records_list table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <th>Name</th>
-                <th>Maxheight</th>
-                <th>Numberofcarspaces</th>
-                <th>Numberoflorryspaces</th>
-                <th>Numberofmotorbikespaces</th>
-                <th>Maxstay</th>
+                <th>Max Height</th>
+                <th>Car Spaces</th>
+                <th>Lorry Spaces</th>
+                <th>Motorbike Spaces</th>
+                <th>Max Stay</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,25 +28,14 @@
                 <td>{{ entity.numberOfMotorbikeSpaces }}</td>
                 <td>{{ entity.maxStay }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('carpark_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('carpark_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a class="btn btn-default btn-xs" href="{{ path('carpark_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('carpark_edit', { 'id': entity.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('carpark_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        <a class="btn btn-default" href="{{ path('carpark_new') }}">
+            New Car Park
+        </a>
     {% endblock %}

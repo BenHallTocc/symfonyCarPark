@@ -1,14 +1,15 @@
 {% extends '::base.html.twig' %}
+{% block title %}Driver List{% endblock %}
 
 {% block body -%}
-    <h1>Driver list</h1>
+    <h1>Driver List</h1>
 
-    <table class="records_list">
+    <table class="records_list table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <th>Name</th>
-                <th>Drivinglicensenumber</th>
+                <th>Driving License No.</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,25 +20,14 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.drivingLicenseNumber }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('driver_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('driver_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a class="btn btn-default btn-xs" href="{{ path('driver_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('driver_edit', { 'id': entity.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('driver_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        <a class="btn btn-default" href="{{ path('driver_new') }}">
+            New Driver
+        </a>
     {% endblock %}

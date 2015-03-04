@@ -1,14 +1,15 @@
 {% extends '::base.html.twig' %}
+{% block title %}Stay List{% endblock %}
 
 {% block body -%}
-    <h1>Stay list</h1>
+    <h1>Stay List</h1>
 
-    <table class="records_list">
+    <table class="records_list table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Entrytime</th>
-                <th>Exitbytime</th>
+                <th>ID</th>
+                <th>Entry Time</th>
+                <th>Exit By Time</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,25 +20,14 @@
                 <td>{% if entity.entryTime %}{{ entity.entryTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.exitByTime %}{{ entity.exitByTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('stay_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('stay_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a class="btn btn-default btn-xs" href="{{ path('stay_show', { 'id': entity.id }) }}">show</a>
+                    <a class="btn btn-default btn-xs" href="{{ path('stay_edit', { 'id': entity.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('stay_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        <a class="btn btn-default" href="{{ path('stay_new') }}">
+            New Stay
+        </a>
     {% endblock %}
